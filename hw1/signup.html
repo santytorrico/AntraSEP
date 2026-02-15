@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signUp.css">
+    <title>Sign Up Form</title>
+</head>
+<body>
+    <div class="sign-up">
+        <h1>Sign Up</h1>
+
+        <div id="personal-info">
+            <input type="text" title="First Name" placeholder="First Name" required>
+            <input type="text" title="Last Name" placeholder="Last Name" required>
+            <input type="tel" title="Mobile No." placeholder="Mobile No." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <input type="email" name="email" title="Email" placeholder="Email Address" required>
+            <input type="password" name="password" title="Password" placeholder="Password" required>
+            <input type="password" name="confirm password" title="Confirm Password" placeholder="Confirm Password" required>
+        </div>
+        <div id="consent">
+            <label>
+                <input type="checkbox" name="agree" required> I Agree
+            </label>
+           <p>By clicking <span id="badge" >Register</span>, you agree to the <span style="color: #00c8ff;">Terms and Conditions</span> set out by this site, including our Cookie Use.</p>
+        </div>
+        <div id="buttons">
+            <button type="submit">Register</button>
+            <button type="button">Sign In</button>
+        </div>
+    </div>
+</body>
+</html>
