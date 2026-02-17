@@ -3,18 +3,19 @@
 
 function reverseString(word){
     let reversedword = "" 
-    for(let i = word.length; i>=0; i--){
+    for(let i = word.length - 1; i>=0; i--){
         reversedword += word[i];
     }
     return reversedword;
 }
 function isPalindrome(word){
-    palindrome = false;
+    let palindrome = false;
     reverse = reverseString(word)
     if(word === reverse){
         palindrome = true
     }
     return palindrome
 }
-let word = "Alo"
-console.log(isPalindrome(word))
+let word = "madam"
+console.log(reverseString(word));
+console.log(isPalindrome(word));
