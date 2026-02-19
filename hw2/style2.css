@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  
+}
+.twitter-card{
+    background-color: #fff;
+    border: 1px solid #cfd9de;
+    border-radius: 16px;
+    padding: 12px;
+    font-size: 15px;
+}
+.tweet-content{
+    display: flex;
+    gap: 12px;
+}
+.thumbnail{
+    border-radius: 100%;
+}
+
+.post-author{
+    display: flex;
+    gap: 4px;
+}
+.name{
+    color: #000;
+    font-weight: bold;
+}
+
+.metadata{
+    color: #71767b;
+}
+.message{
+    margin-top: 2px;
+    color: #0f1419;
+}
+
+.actions-row{
+    max-width: 425px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+}
+.action-element{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.icon{
+    color: #536471;
+    align-items: center;
+}
+
+.action-count{
+    color: #536471;
+    font-size: 13px;
+}
