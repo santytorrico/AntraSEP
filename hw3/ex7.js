@@ -4,7 +4,6 @@
 // Expected Output: 5
 function numberOfVowels(sent){
     let arr = sent.toLowerCase().split("");
-    let validVowels = ["a", "e", "i", "o", "u"]
     const vowels = arr.filter(vowel =>
         "aeiou".includes(vowel)
     )
