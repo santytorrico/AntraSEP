@@ -1,27 +1,28 @@
-<h1>Welcome, {{ name }}!</h1>
-
-<div>
-  <label>Name:</label>
-  <input type="text" [(ngModel)]="name">
-</div>
-
-<div>
-  <label>Email:</label>
-  <input type="email" [(ngModel)]="email">
-</div>
-
-<div>
-  <label>Date of Birth:</label>
-  <input type="date" [(ngModel)]="dateOfBirth">
-</div>
+<h1>Welcome, {{ profileForm.value.name }}!</h1>
+<form [formGroup]="profileForm">
+    <div>
+      <label>Name:</label>
+      <input type="text" formControlName="name">
+    </div>
+    
+    <div>
+      <label>Email:</label>
+      <input type="email" formControlName="email">
+    </div>
+    
+    <div>
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="dateOfBirth">
+    </div>
+</form>
 
 <hr>
 
 <h3>Profile Preview</h3>
 
-<p><strong>Name:</strong> {{ name }}</p>
-<p><strong>Email:</strong> {{ email }}</p>
-<p><strong>Date of Birth:</strong> {{ dateOfBirth }}</p>
+<p><strong>Name:</strong> {{ profileForm.value.name }}</p>
+<p><strong>Email:</strong> {{ profileForm.value.email }}</p>
+<p><strong>Date of Birth:</strong> {{ profileForm.value.dateOfBirth }}</p>
 
 <hr>
 

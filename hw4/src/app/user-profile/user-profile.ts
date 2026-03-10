@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,30 +8,26 @@ import { Component } from '@angular/core';
   styleUrl: './user-profile.scss',
 })
 export class UserProfile {
-  name: string = '';
-  email: string = '';
-  dateOfBirth: string = '';
-  saveCount: number = 0;
+  profileForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    dateOfBirth: new FormControl('')
+  });
+  saveCount = 0;
 
   resetForm() {
-    this.name = '';
-    this.email = '';
-    this.dateOfBirth = '';
+    this.profileForm.reset();
   }
 
   saveProfile() {
-    const profile = {
-      name: this.name,
-      email: this.email,
-      dateOfBirth: this.dateOfBirth
-    };
-
-    console.log(profile);
+    console.log(this.profileForm.value);
     this.saveCount++;
   }
 
   isEmpty(): boolean {
-    return !this.name && !this.email && !this.dateOfBirth;
+    const {name, email, dateOfBirth} = this.profileForm.value;
+
+    return !name && !email && !dateOfBirth;
   }
 
 }
