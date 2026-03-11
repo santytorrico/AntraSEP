@@ -1,25 +1,37 @@
 
-<div *ngIf="TASKS.length == 0">
-    It is empty
-    <!-- <p *ngFor="let item of TASKS">
-        {{item.title}}
-        {{item.description}}
-        {{item.status}}
-    </p> -->
+<p *ngIf="TASKS.length === 0">
+    No tasks available
+</p>
+<div>
+    <input
+        type="text"
+        placeholder="Task title"
+        [(ngModel)]="newTitle"
+    />
+
+    <input
+        type="text"
+        placeholder="Task description"
+        [(ngModel)]="newDescription"
+    />
+
+    <button (click)="addTask()">
+        Add Task
+    </button>
 </div>
 <ul>
     <li *ngFor="let item of TASKS">
-        <p>
+        <p [style.text-decoration]="isOverdue(item) ? 'line-through' : 'none'">
             {{item.title}}
         </p>
-        <p appEllipsis>
+        <p appEllipsis
+            [style.text-decoration]="isOverdue(item) ? 'line-through' : 'none'">
             {{item.description}}
         </p>
         <select [(ngModel)]="item.status">
             <option value="Incomplete">Incomplete</option>
             <option value="Completed">Completed</option>
             <option value="In Progress">In Progress</option>
-            
         </select>
     </li>
 </ul>

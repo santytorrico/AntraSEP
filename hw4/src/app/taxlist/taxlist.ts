@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './taxlist.scss',
 })
 export class Taxlist {
+  newTitle = "";
+  newDescription = "";
   TASKS = [
   {
     id: 1,
@@ -89,5 +91,26 @@ export class Taxlist {
     priority: 'High',
   },
   ]
+  
+  isOverdue(task: any){
+    return task.dueDate < new Date();
+  }
+  
+  addTask(){
+  
+    if(!this.newTitle || !this.newDescription) return;
+  
+    this.TASKS.push({
+      id: Date.now(),
+      title: this.newTitle,
+      description: this.newDescription,
+      dueDate: new Date(),
+      status: "Incomplete",
+      priority: "Low"
+    });
+  
+    this.newTitle = "";
+    this.newDescription = "";
+  }
 }
 
