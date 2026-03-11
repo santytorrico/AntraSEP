@@ -1,18 +1,24 @@
 <h1>Welcome, {{ profileForm.value.name }}!</h1>
 <form [formGroup]="profileForm">
     <div>
-      <label>Name:</label>
-      <input type="text" formControlName="name">
+        <label>
+            <input type="text" formControlName="name">
+            Name:
+        </label>
     </div>
     
     <div>
-      <label>Email:</label>
-      <input type="email" formControlName="email">
+        <label>
+            <input type="email" formControlName="email">
+            Email:
+        </label>
     </div>
     
     <div>
-      <label>Date of Birth:</label>
-      <input type="date" formControlName="dateOfBirth">
+        <label>
+            <input type="date" formControlName="dateOfBirth">
+            Date of Birth:
+        </label>
     </div>
 </form>
 
