@@ -1,0 +1,22 @@
+<form (ngSubmit)="submitBooking()">
+
+<select [(ngModel)]= "tripType" name="tripType">
+    <option value='oneWay'>One way</option>
+    <option value='roundTrip'>Round trip</option>
+</select>
+
+<input type="date" 
+    [(ngModel)]="departureDate"
+    name="departureDates"
+> 
+
+<input *ngIf="tripType === 'roundTrip'" 
+    type="date" 
+    [(ngModel)]="returnDate"
+    name="returnDate"
+> 
+
+<button (click)="submitBooking()">Submit</button>
+
+</form>
+<p *ngIf="message">{{ message }}</p>
